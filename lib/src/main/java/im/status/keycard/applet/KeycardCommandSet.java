@@ -32,6 +32,9 @@ public class KeycardCommandSet {
   static final byte INS_SIGN = (byte) 0xC0;
   static final byte INS_SET_PINLESS_PATH = (byte) 0xC1;
   static final byte INS_EXPORT_KEY = (byte) 0xC2;
+  static final byte INS_LOAD_CERTS = (byte) 0xFA;
+  static final byte INS_EXPORT_CERTS = (byte) 0xFB;
+  static final byte INS_EXPORT_SEED = (byte) 0xC3;
 
   public static final byte CHANGE_PIN_P1_USER_PIN = 0x00;
   public static final byte CHANGE_PIN_P1_PUK = 0x01;
@@ -129,6 +132,27 @@ public class KeycardCommandSet {
   public APDUResponse select() throws IOException {
     return select(Identifiers.KEYCARD_DEFAULT_INSTANCE_IDX);
   }
+
+  //=================
+  // GridPlus-only
+  //=================
+
+  public APDUResponse loadCerts(byte[] data) throws IOException {
+    APDUCommand cmd = new APDUCommand(0x80, INS_LOAD_CERTS, 0, 0, data);
+    return apduChannel.send(cmd);
+  }
+
+  public APDUResponse exportCerts(byte[] data) throws IOException {
+    APDUCommand cmd = new APDUCommand(0x80, INS_EXPORT_CERTS, 0, 0, new byte[0]);
+    return apduChannel.send(cmd);
+  }
+
+  public APDUResponse exportSeed() throws IOException {
+    APDUCommand cmd = secureChannel.protectedCommand(0x80, INS_EXPORT_SEED, 0, 0, new byte[0]);
+    return secureChannel.transmit(apduChannel, cmd);
+  }
+
+  //=================
 
   /**
    * Selects a Keycard instance. The applet is assumed to have been installed with its default AID. The returned data is
