@@ -1,4 +1,4 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
 /**
  * Parses the response from a SELECT command. If the card has not yet received the INIT command the isInitializedCard

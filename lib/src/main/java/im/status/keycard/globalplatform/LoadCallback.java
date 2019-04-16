@@ -1,4 +1,4 @@
-package im.status.keycard.globalplatform;
+package io.gridplus.safecard.globalplatform;
 
 /**
  * Callback interface using during package loading process.

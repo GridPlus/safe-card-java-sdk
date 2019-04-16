@@ -1,12 +1,12 @@
-package im.status.keycard.android;
+package io.gridplus.safecard.android;
 
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.IsoDep;
 import android.os.SystemClock;
 import android.util.Log;
-import im.status.keycard.globalplatform.Crypto;
-import im.status.keycard.io.CardListener;
+import io.gridplus.safecard.globalplatform.Crypto;
+import io.gridplus.safecard.io.CardListener;
 
 import java.io.IOException;
 

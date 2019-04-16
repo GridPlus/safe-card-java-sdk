@@ -1,14 +1,14 @@
-package im.status.keycard.app;
+package io.gridplus.safecard.app;
 
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import im.status.keycard.demo.R;
-import im.status.keycard.io.CardChannel;
-import im.status.keycard.io.CardListener;
-import im.status.keycard.android.NFCCardManager;
-import im.status.keycard.applet.*;
+import io.gridplus.safecard.demo.R;
+import io.gridplus.safecard.io.CardChannel;
+import io.gridplus.safecard.io.CardListener;
+import io.gridplus.safecard.android.NFCCardManager;
+import io.gridplus.safecard.applet.*;
 import org.bouncycastle.util.encoders.Hex;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package im.status.keycard.io;
+package io.gridplus.safecard.io;
 
 /**
  * Exception thrown when the response APDU from the card contains unexpected SW or data.

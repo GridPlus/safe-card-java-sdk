@@ -1,4 +1,4 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
 /**
  * Callback interface for duplication procedure.

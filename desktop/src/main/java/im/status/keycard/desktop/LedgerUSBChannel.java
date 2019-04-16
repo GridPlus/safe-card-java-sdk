@@ -1,8 +1,8 @@
-package im.status.keycard.desktop;
+package io.gridplus.safecard.desktop;
 
-import im.status.keycard.io.APDUCommand;
-import im.status.keycard.io.APDUResponse;
-import im.status.keycard.io.CardChannel;
+import io.gridplus.safecard.io.APDUCommand;
+import io.gridplus.safecard.io.APDUResponse;
+import io.gridplus.safecard.io.CardChannel;
 import org.hid4java.HidDevice;
 
 import java.io.ByteArrayOutputStream;

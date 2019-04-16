@@ -1,9 +1,9 @@
-package im.status.keycard.desktop;
+package io.gridplus.safecard.desktop;
 
-import im.status.keycard.globalplatform.Crypto;
-import im.status.keycard.io.APDUCommand;
-import im.status.keycard.io.APDUResponse;
-import im.status.keycard.io.CardChannel;
+import io.gridplus.safecard.globalplatform.Crypto;
+import io.gridplus.safecard.io.APDUCommand;
+import io.gridplus.safecard.io.APDUResponse;
+import io.gridplus.safecard.io.CardChannel;
 
 import javax.smartcardio.CardException;
 import javax.smartcardio.CommandAPDU;

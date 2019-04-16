@@ -1,6 +1,6 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
-import im.status.keycard.io.*;
+import io.gridplus.safecard.io.*;
 import org.bouncycastle.jce.interfaces.ECPrivateKey;
 import org.bouncycastle.jce.interfaces.ECPublicKey;
 

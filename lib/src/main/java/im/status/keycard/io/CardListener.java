@@ -1,4 +1,4 @@
-package im.status.keycard.io;
+package io.gridplus.safecard.io;
 
 /**
  * Listener for card connection events.

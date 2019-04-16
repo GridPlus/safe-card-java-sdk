@@ -1,4 +1,4 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;

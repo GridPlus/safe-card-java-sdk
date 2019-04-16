@@ -1,4 +1,4 @@
-package im.status.keycard.io;
+package io.gridplus.safecard.io;
 
 /**
  * Exception thrown when checking PIN/PUK

@@ -1,10 +1,10 @@
-package im.status.keycard.android;
+package io.gridplus.safecard.android;
 
 import android.nfc.tech.IsoDep;
 import android.util.Log;
-import im.status.keycard.io.APDUCommand;
-import im.status.keycard.io.APDUResponse;
-import im.status.keycard.io.CardChannel;
+import io.gridplus.safecard.io.APDUCommand;
+import io.gridplus.safecard.io.APDUResponse;
+import io.gridplus.safecard.io.CardChannel;
 
 import java.io.IOException;
 

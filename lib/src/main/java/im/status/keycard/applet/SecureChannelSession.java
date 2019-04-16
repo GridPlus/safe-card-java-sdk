@@ -1,9 +1,9 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
-import im.status.keycard.io.APDUCommand;
-import im.status.keycard.io.APDUException;
-import im.status.keycard.io.APDUResponse;
-import im.status.keycard.io.CardChannel;
+import io.gridplus.safecard.io.APDUCommand;
+import io.gridplus.safecard.io.APDUException;
+import io.gridplus.safecard.io.APDUResponse;
+import io.gridplus.safecard.io.CardChannel;
 import org.bouncycastle.crypto.engines.AESEngine;
 import org.bouncycastle.crypto.macs.CBCBlockCipherMac;
 import org.bouncycastle.crypto.params.KeyParameter;

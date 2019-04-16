@@ -1,4 +1,4 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
 import org.bouncycastle.crypto.digests.KeccakDigest;
 import org.bouncycastle.math.ec.ECPoint;

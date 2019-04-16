@@ -1,6 +1,6 @@
-package im.status.keycard.globalplatform;
+package io.gridplus.safecard.globalplatform;
 
-import im.status.keycard.applet.Identifiers;
+import io.gridplus.safecard.applet.Identifiers;
 import org.bouncycastle.util.encoders.Hex;
 
 import java.io.ByteArrayOutputStream;
@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.SecureRandom;
 
-import im.status.keycard.io.APDUCommand;
-import im.status.keycard.io.APDUException;
-import im.status.keycard.io.APDUResponse;
-import im.status.keycard.io.CardChannel;
+import io.gridplus.safecard.io.APDUCommand;
+import io.gridplus.safecard.io.APDUException;
+import io.gridplus.safecard.io.APDUResponse;
+import io.gridplus.safecard.io.CardChannel;
 
 /**
  * Command set used for loading, installing and removing applets and packages. This class is generic and can work with

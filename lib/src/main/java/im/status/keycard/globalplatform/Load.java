@@ -1,4 +1,4 @@
-package im.status.keycard.globalplatform;
+package io.gridplus.safecard.globalplatform;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;

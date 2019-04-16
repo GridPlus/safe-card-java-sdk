@@ -1,4 +1,4 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.asn1.x9.X9IntegerConverter;

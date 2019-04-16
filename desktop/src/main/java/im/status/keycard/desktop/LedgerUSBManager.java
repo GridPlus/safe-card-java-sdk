@@ -1,7 +1,7 @@
-package im.status.keycard.desktop;
+package io.gridplus.safecard.desktop;
 
-import im.status.keycard.globalplatform.Crypto;
-import im.status.keycard.io.CardListener;
+import io.gridplus.safecard.globalplatform.Crypto;
+import io.gridplus.safecard.io.CardListener;
 import org.hid4java.*;
 import org.hid4java.event.HidServicesEvent;
 

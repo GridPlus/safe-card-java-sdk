@@ -1,4 +1,4 @@
-package im.status.keycard.io;
+package io.gridplus.safecard.io;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

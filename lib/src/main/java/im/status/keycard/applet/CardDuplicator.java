@@ -1,8 +1,8 @@
-package im.status.keycard.applet;
+package io.gridplus.safecard.applet;
 
-import im.status.keycard.io.APDUException;
-import im.status.keycard.io.CardChannel;
-import im.status.keycard.io.WrongPINException;
+import io.gridplus.safecard.io.APDUException;
+import io.gridplus.safecard.io.CardChannel;
+import io.gridplus.safecard.io.WrongPINException;
 
 import java.io.IOException;
 import java.security.SecureRandom;

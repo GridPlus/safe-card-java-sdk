@@ -1,4 +1,4 @@
-package im.status.keycard.globalplatform;
+package io.gridplus.safecard.globalplatform;
 
 /**
  * Keeps keys for SCP02.

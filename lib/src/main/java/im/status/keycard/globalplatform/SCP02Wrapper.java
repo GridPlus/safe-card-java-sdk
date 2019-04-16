@@ -1,10 +1,10 @@
-package im.status.keycard.globalplatform;
+package io.gridplus.safecard.globalplatform;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-import im.status.keycard.io.APDUCommand;
+import io.gridplus.safecard.io.APDUCommand;
 
 /**
  * Adds a SCP02 MAC to APDUs.

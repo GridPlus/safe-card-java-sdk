@@ -1,4 +1,4 @@
-package im.status.keycard.io;
+package io.gridplus.safecard.io;
 
 /**
  * ISO7816-4 APDU response.

@@ -1,11 +1,11 @@
-package im.status.keycard.globalplatform;
+package io.gridplus.safecard.globalplatform;
 
 import java.io.IOException;
 
-import im.status.keycard.io.APDUCommand;
-import im.status.keycard.io.APDUException;
-import im.status.keycard.io.APDUResponse;
-import im.status.keycard.io.CardChannel;
+import io.gridplus.safecard.io.APDUCommand;
+import io.gridplus.safecard.io.APDUException;
+import io.gridplus.safecard.io.APDUResponse;
+import io.gridplus.safecard.io.CardChannel;
 
 /**
  * An SCP02 Secure Channel. Wraps a CardChannel to allow transparent handling of the secure channel.
