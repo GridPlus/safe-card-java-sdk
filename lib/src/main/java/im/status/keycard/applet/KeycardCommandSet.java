@@ -142,7 +142,7 @@ public class KeycardCommandSet {
     return apduChannel.send(cmd);
   }
 
-  public APDUResponse exportCerts(byte[] data) throws IOException {
+  public APDUResponse exportCerts() throws IOException {
     APDUCommand cmd = new APDUCommand(0x80, INS_EXPORT_CERTS, 0, 0, new byte[0]);
     return apduChannel.send(cmd);
   }
