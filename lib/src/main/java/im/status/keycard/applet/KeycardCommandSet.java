@@ -157,6 +157,11 @@ public class KeycardCommandSet {
     return secureChannel.transmit(apduChannel, command);
   }
 
+  public APDUResponse sendCommand(byte cmd, byte p1, byte p2, byte[] data) throws IOException {
+    APDUCommand command = new APDUCommand(0x80, cmd, p1, p2, data);
+    return apduChannel.send(command);
+  }
+
   //=================
 
   /**
