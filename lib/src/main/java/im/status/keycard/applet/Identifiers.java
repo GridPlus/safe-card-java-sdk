@@ -35,6 +35,8 @@ public class Identifiers {
 
     byte[] instanceAID = Arrays.copyOf(KEYCARD_AID, KEYCARD_AID.length + 1);
     instanceAID[KEYCARD_AID.length] = (byte) instanceIdx;
+    System.out.println("Instance AID:");
+    System.out.println(Arrays.toString(instanceAID));
     return instanceAID;
   }
 }
