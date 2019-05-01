@@ -173,7 +173,7 @@ public class KeycardCommandSet {
    * @throws IOException communication error
    */
   public APDUResponse select(int instanceIdx) throws IOException {
-    APDUCommand selectApplet = new APDUCommand(0x00, 0xA4, 4, 0, Identifiers.getKeycardInstanceAID(instanceIdx));
+    APDUCommand selectApplet = new APDUCommand(0x00, 0xA4, 0x20, 0, Identifiers.getKeycardInstanceAID(instanceIdx));
     APDUResponse resp =  apduChannel.send(selectApplet);
 
 
