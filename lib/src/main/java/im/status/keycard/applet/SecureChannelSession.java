@@ -139,6 +139,33 @@ public class SecureChannelSession {
   }
 
   /**
+   * Establishes a Secure Channel with the card. The command parameters are the public key generated in the first step.
+   * Follows the specifications from the SECURE_CHANNEL.md document.
+   *
+   * @param apduChannel the apdu channel
+   * @throws IOException communication error
+   */
+  public void autoOpenSecureChannelV2(CardChannel apduChannel, byte[] pairingKey) throws IOException {
+    APDUResponse response = openSecureChannel(apduChannel, (byte) 0, publicKey);
+
+    if (response.getSw() != 0x9000) {
+      throw new IOException("OPEN SECURE CHANNEL failed");
+    }
+
+    processOpenSecureChannelResponseV2(response, pairingKey);
+
+    response = mutuallyAuthenticate(apduChannel);
+
+    if (response.getSw() != 0x9000) {
+      throw new IOException("MUTUALLY AUTHENTICATE failed");
+    }
+
+    if(!verifyMutuallyAuthenticateResponse(response)) {
+      throw new IOException("Invalid authentication data from the card");
+    }
+  }
+
+  /**
    * Processes the response from OPEN SECURE CHANNEL. This initialize the session keys, Cipher and MAC internally.
    *
    * @param response the card response
@@ -148,6 +175,30 @@ public class SecureChannelSession {
       MessageDigest md = MessageDigest.getInstance("SHA512");
       md.update(secret);
       md.update(pairing.getPairingKey());
+      byte[] data = response.getData();
+      byte[] keyData = md.digest(Arrays.copyOf(data, SC_SECRET_LENGTH));
+      iv = Arrays.copyOfRange(data, SC_SECRET_LENGTH, data.length);
+
+      sessionEncKey = new SecretKeySpec(Arrays.copyOf(keyData, SC_SECRET_LENGTH), "AES");
+      sessionMacKey = new KeyParameter(keyData, SC_SECRET_LENGTH, SC_SECRET_LENGTH);
+      sessionCipher = Cipher.getInstance("AES/CBC/ISO7816-4Padding", "BC");
+      sessionMac = new CBCBlockCipherMac(new AESEngine(), 128, null);
+      open = true;
+    } catch(Exception e) {
+      throw new RuntimeException("Is BouncyCastle in the classpath?", e);
+    }
+  }
+
+    /**
+   * Processes the response from OPEN SECURE CHANNEL. This initialize the session keys, Cipher and MAC internally.
+   *
+   * @param response the card response
+   */
+  public void processOpenSecureChannelResponseV2(APDUResponse response, byte[] pairingKey) {
+    try {
+      MessageDigest md = MessageDigest.getInstance("SHA512");
+      md.update(secret);
+      md.update(pairingKey);
       byte[] data = response.getData();
       byte[] keyData = md.digest(Arrays.copyOf(data, SC_SECRET_LENGTH));
       iv = Arrays.copyOfRange(data, SC_SECRET_LENGTH, data.length);
@@ -229,6 +280,20 @@ public class SecureChannelSession {
    */
   public void autoUnpair(CardChannel apduChannel) throws IOException {
     APDUResponse resp = unpair(apduChannel, pairing.getPairingIndex());
+
+    if (resp.getSw() != 0x9000) {
+      throw new IOException("Unpairing failed");
+    }
+  }
+
+    /**
+   * Unpairs the current paired key
+   *
+   * @param apduChannel the apdu channel
+   * @throws IOException communication error
+   */
+  public void autoUnpairV2(CardChannel apduChannel) throws IOException {
+    APDUResponse resp = unpair(apduChannel, (byte) 0);
 
     if (resp.getSw() != 0x9000) {
       throw new IOException("Unpairing failed");
